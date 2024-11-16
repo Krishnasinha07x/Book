@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Baazar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .book {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+        .book img {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+        }
+        .book h3 {
+            margin: 10px 0;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+        .add-to-cart {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Book Baazar</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="book">
+            <img src="images/book1.jpg" alt="Math Book">
+            <h3>Math</h3>
+            <p>Price: ₹600</p>
+            <button class="add-to-cart" onclick="addToCart('Math', 600, 'images/book1.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book2.jpg" alt="Physical Education Book">
+            <h3>Physical Education</h3>
+            <p>Price: ₹700</p>
+            <button class="add-to-cart" onclick="addToCart('Physical Education', 700, 'images/book2.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book3.jpg" alt="Physics Book">
+            <h3>Physics</h3>
+            <p>Price: ₹650</p>
+            <button class="add-to-cart" onclick="addToCart('Physics', 650, 'images/book3.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book4.jpg" alt="Chemistry Book">
+            <h3>Chemistry</h3>
+            <p>Price: ₹800</p>
+            <button class="add-to-cart" onclick="addToCart('Chemistry', 800, 'images/book4.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book5.jpg" alt="English Book">
+            <h3>English</h3>
+            <p>Price: ₹500</p>
+            <button class="add-to-cart" onclick="addToCart('English', 500, 'images/book5.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book6.jpg" alt="Hindi Book">
+            <h3>Hindi</h3>
+            <p>Price: ₹550</p>
+            <button class="add-to-cart" onclick="addToCart('Hindi', 550, 'images/book6.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book7.jpg" alt="History Book">
+            <h3>History</h3>
+            <p>Price: ₹720</p>
+            <button class="add-to-cart" onclick="addToCart('History', 720, 'images/book7.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book8.jpg" alt="Geography Book">
+            <h3>Geography</h3>
+            <p>Price: ₹680</p>
+            <button class="add-to-cart" onclick="addToCart('Geography', 680, 'images/book8.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book9.jpg" alt="Economics Book">
+            <h3>Economics</h3>
+            <p>Price: ₹750</p>
+            <button class="add-to-cart" onclick="addToCart('Economics', 750, 'images/book9.jpg')">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="images/book10.jpg" alt="Civics Book">
+            <h3>Civics</h3>
+            <p>Price: ₹590</p>
+            <button class="add-to-cart" onclick="addToCart('Civics', 590, 'images/book10.jpg')">Add to Cart</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Book Baazar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function addToCart(name, price, image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} has been added to your cart!`);
+        }
+    </script>
+</body>
+</html>
